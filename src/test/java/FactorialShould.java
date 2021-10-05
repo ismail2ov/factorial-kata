@@ -5,7 +5,7 @@ import org.junit.jupiter.params.provider.MethodSource;
 
 import java.util.stream.Stream;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class FactorialShould {
 
@@ -31,7 +31,7 @@ public class FactorialShould {
     void return_expected_for_factorial_of_input(long input, long expected) {
         long actual = factorial.of(input);
 
-        assertEquals(expected, actual);
+        assertThat(actual).isEqualTo(expected);
     }
 
 }
